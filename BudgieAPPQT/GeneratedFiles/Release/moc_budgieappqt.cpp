@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'budgieappqt.h'
 **
-** Created: Tue Apr 18 02:11:11 2017
+** Created: Fri Apr 21 01:01:13 2017
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_BudgieAPPQT[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -41,11 +41,14 @@ static const uint qt_meta_data_BudgieAPPQT[] = {
      187,   12,   12,   12, 0x08,
      208,   12,   12,   12, 0x08,
      230,   12,   12,   12, 0x08,
-     267,   12,   12,   12, 0x08,
-     304,   12,   12,   12, 0x08,
+     249,   12,   12,   12, 0x08,
+     268,   12,   12,   12, 0x08,
+     291,   12,   12,   12, 0x08,
+     308,   12,   12,   12, 0x08,
      327,   12,   12,   12, 0x08,
-     344,   12,   12,   12, 0x08,
-     363,   12,   12,   12, 0x08,
+     348,   12,   12,   12, 0x08,
+     373,   12,   12,   12, 0x08,
+     396,   12,   12,   12, 0x08,
 
        0        // eod
 };
@@ -57,10 +60,12 @@ static const char qt_meta_stringdata_BudgieAPPQT[] = {
     "handleSaverButton()\0handleRentRadioButton()\0"
     "handleOwnRadioButton()\0handleDailyButton()\0"
     "handleWeeklyButton()\0handleMonthlyButton()\0"
-    "handleTransportationCostBackButton()\0"
-    "handleTransportationCostNextButton()\0"
+    "handleBackButton()\0handleNextButton()\0"
     "handleCalenderButton()\0handleCalender()\0"
     "handleSaveButton()\0handleLaunchButton()\0"
+    "handleHouseRadioButton()\0"
+    "handleCarRadioButton()\0"
+    "handleCalculateLoanButton()\0"
 };
 
 const QMetaObject BudgieAPPQT::staticMetaObject = {
@@ -101,15 +106,18 @@ int BudgieAPPQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 6: handleDailyButton(); break;
         case 7: handleWeeklyButton(); break;
         case 8: handleMonthlyButton(); break;
-        case 9: handleTransportationCostBackButton(); break;
-        case 10: handleTransportationCostNextButton(); break;
+        case 9: handleBackButton(); break;
+        case 10: handleNextButton(); break;
         case 11: handleCalenderButton(); break;
         case 12: handleCalender(); break;
         case 13: handleSaveButton(); break;
         case 14: handleLaunchButton(); break;
+        case 15: handleHouseRadioButton(); break;
+        case 16: handleCarRadioButton(); break;
+        case 17: handleCalculateLoanButton(); break;
         default: ;
         }
-        _id -= 15;
+        _id -= 18;
     }
     return _id;
 }

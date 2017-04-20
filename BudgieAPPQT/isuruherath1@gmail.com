@@ -1,4 +1,0 @@
-billsExpenseValue:30
-incomeValue:10
-livingExpenseValue:20
-otherExpenseValue:40

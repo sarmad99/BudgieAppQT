@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'budgieappqt.ui'
 **
-** Created: Tue Apr 18 02:11:11 2017
+** Created: Fri Apr 21 01:01:13 2017
 **      by: Qt User Interface Compiler version 4.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,6 +16,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCalendarWidget>
 #include <QtGui/QDateEdit>
+#include <QtGui/QDoubleSpinBox>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
@@ -23,6 +24,7 @@
 #include <QtGui/QMenuBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
+#include <QtGui/QSpinBox>
 #include <QtGui/QStackedWidget>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
@@ -77,7 +79,6 @@ public:
     QPushButton *weeklyButton;
     QPushButton *monthlyButton;
     QPushButton *transportationCostBackButton;
-    QPushButton *transportationCostNextButton;
     QWidget *saverPage;
     QLabel *amountNeededLabel;
     QLabel *dueDateLabel;
@@ -88,7 +89,21 @@ public:
     QPushButton *calenderButton;
     QCalendarWidget *calender;
     QPushButton *saveButton;
+    QPushButton *saverBackButton;
     QWidget *loanCalcPage;
+    QPushButton *LoanCalculatorBackButton;
+    QRadioButton *loanTypeCar;
+    QPushButton *calculateLoanButton;
+    QLabel *loanTypeLabel;
+    QLabel *monthlyLoanAmountLabel;
+    QLineEdit *monthlyLoanAmountValue;
+    QRadioButton *loanTypeHouse;
+    QLabel *interestRateLabel;
+    QLabel *loanDurationLabel;
+    QSpinBox *loanDurationValue;
+    QDoubleSpinBox *interestRateValue;
+    QDoubleSpinBox *loanAmountValue;
+    QLabel *loanAmountLabel;
     QLabel *heading;
     QLabel *subHeading;
     QMenuBar *menuBar;
@@ -250,9 +265,6 @@ public:
         transportationCostBackButton = new QPushButton(transportationCostPage);
         transportationCostBackButton->setObjectName(QString::fromUtf8("transportationCostBackButton"));
         transportationCostBackButton->setGeometry(QRect(10, 10, 50, 20));
-        transportationCostNextButton = new QPushButton(transportationCostPage);
-        transportationCostNextButton->setObjectName(QString::fromUtf8("transportationCostNextButton"));
-        transportationCostNextButton->setGeometry(QRect(540, 10, 50, 20));
         stackedWidget->addWidget(transportationCostPage);
         saverPage = new QWidget();
         saverPage->setObjectName(QString::fromUtf8("saverPage"));
@@ -297,9 +309,67 @@ public:
         saveButton = new QPushButton(saverPage);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
         saveButton->setGeometry(QRect(275, 320, 50, 30));
+        saverBackButton = new QPushButton(saverPage);
+        saverBackButton->setObjectName(QString::fromUtf8("saverBackButton"));
+        saverBackButton->setGeometry(QRect(10, 10, 50, 20));
         stackedWidget->addWidget(saverPage);
         loanCalcPage = new QWidget();
         loanCalcPage->setObjectName(QString::fromUtf8("loanCalcPage"));
+        LoanCalculatorBackButton = new QPushButton(loanCalcPage);
+        LoanCalculatorBackButton->setObjectName(QString::fromUtf8("LoanCalculatorBackButton"));
+        LoanCalculatorBackButton->setGeometry(QRect(10, 10, 50, 20));
+        loanTypeCar = new QRadioButton(loanCalcPage);
+        loanTypeCar->setObjectName(QString::fromUtf8("loanTypeCar"));
+        loanTypeCar->setGeometry(QRect(330, 60, 50, 20));
+        calculateLoanButton = new QPushButton(loanCalcPage);
+        calculateLoanButton->setObjectName(QString::fromUtf8("calculateLoanButton"));
+        calculateLoanButton->setGeometry(QRect(250, 320, 100, 30));
+        loanTypeLabel = new QLabel(loanCalcPage);
+        loanTypeLabel->setObjectName(QString::fromUtf8("loanTypeLabel"));
+        loanTypeLabel->setGeometry(QRect(80, 60, 180, 20));
+        loanTypeLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        monthlyLoanAmountLabel = new QLabel(loanCalcPage);
+        monthlyLoanAmountLabel->setObjectName(QString::fromUtf8("monthlyLoanAmountLabel"));
+        monthlyLoanAmountLabel->setGeometry(QRect(80, 260, 180, 20));
+        monthlyLoanAmountLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        monthlyLoanAmountValue = new QLineEdit(loanCalcPage);
+        monthlyLoanAmountValue->setObjectName(QString::fromUtf8("monthlyLoanAmountValue"));
+        monthlyLoanAmountValue->setEnabled(false);
+        monthlyLoanAmountValue->setGeometry(QRect(270, 260, 120, 20));
+        loanTypeHouse = new QRadioButton(loanCalcPage);
+        loanTypeHouse->setObjectName(QString::fromUtf8("loanTypeHouse"));
+        loanTypeHouse->setGeometry(QRect(270, 60, 50, 20));
+        interestRateLabel = new QLabel(loanCalcPage);
+        interestRateLabel->setObjectName(QString::fromUtf8("interestRateLabel"));
+        interestRateLabel->setGeometry(QRect(80, 180, 180, 20));
+        interestRateLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        loanDurationLabel = new QLabel(loanCalcPage);
+        loanDurationLabel->setObjectName(QString::fromUtf8("loanDurationLabel"));
+        loanDurationLabel->setGeometry(QRect(80, 140, 180, 20));
+        loanDurationLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        loanDurationValue = new QSpinBox(loanCalcPage);
+        loanDurationValue->setObjectName(QString::fromUtf8("loanDurationValue"));
+        loanDurationValue->setGeometry(QRect(270, 140, 120, 20));
+        loanDurationValue->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
+        loanDurationValue->setMinimum(15);
+        loanDurationValue->setMaximum(30);
+        loanDurationValue->setSingleStep(15);
+        loanDurationValue->setValue(15);
+        interestRateValue = new QDoubleSpinBox(loanCalcPage);
+        interestRateValue->setObjectName(QString::fromUtf8("interestRateValue"));
+        interestRateValue->setGeometry(QRect(270, 180, 120, 20));
+        interestRateValue->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        interestRateValue->setSingleStep(0.01);
+        loanAmountValue = new QDoubleSpinBox(loanCalcPage);
+        loanAmountValue->setObjectName(QString::fromUtf8("loanAmountValue"));
+        loanAmountValue->setGeometry(QRect(270, 100, 120, 20));
+        loanAmountValue->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        loanAmountValue->setMaximum(1e+07);
+        loanAmountValue->setSingleStep(0.01);
+        loanAmountLabel = new QLabel(loanCalcPage);
+        loanAmountLabel->setObjectName(QString::fromUtf8("loanAmountLabel"));
+        loanAmountLabel->setGeometry(QRect(80, 100, 180, 20));
+        loanAmountLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         stackedWidget->addWidget(loanCalcPage);
         heading = new QLabel(centralWidget);
         heading->setObjectName(QString::fromUtf8("heading"));
@@ -354,12 +424,16 @@ public:
         QObject::connect(dailyButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleDailyButton()));
         QObject::connect(weeklyButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleWeeklyButton()));
         QObject::connect(monthlyButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleMonthlyButton()));
-        QObject::connect(transportationCostBackButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleTransportationCostBackButton()));
-        QObject::connect(transportationCostNextButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleTransportationCostNextButton()));
+        QObject::connect(transportationCostBackButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleBackButton()));
         QObject::connect(calender, SIGNAL(clicked(QDate)), BudgieAPPQTClass, SLOT(handleCalender()));
         QObject::connect(calenderButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleCalenderButton()));
         QObject::connect(saveButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleSaveButton()));
         QObject::connect(launchButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleLaunchButton()));
+        QObject::connect(saverBackButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleBackButton()));
+        QObject::connect(LoanCalculatorBackButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleBackButton()));
+        QObject::connect(loanTypeHouse, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleHouseRadioButton()));
+        QObject::connect(loanTypeCar, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleCarRadioButton()));
+        QObject::connect(calculateLoanButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleCalculateLoanButton()));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -398,12 +472,21 @@ public:
         weeklyButton->setText(QApplication::translate("BudgieAPPQTClass", "Weekly", 0, QApplication::UnicodeUTF8));
         monthlyButton->setText(QApplication::translate("BudgieAPPQTClass", "Monthly", 0, QApplication::UnicodeUTF8));
         transportationCostBackButton->setText(QApplication::translate("BudgieAPPQTClass", "Back", 0, QApplication::UnicodeUTF8));
-        transportationCostNextButton->setText(QApplication::translate("BudgieAPPQTClass", "Next", 0, QApplication::UnicodeUTF8));
         amountNeededLabel->setText(QApplication::translate("BudgieAPPQTClass", "Amount Needed", 0, QApplication::UnicodeUTF8));
         dueDateLabel->setText(QApplication::translate("BudgieAPPQTClass", "Due Date", 0, QApplication::UnicodeUTF8));
         savingLabel->setText(QApplication::translate("BudgieAPPQTClass", "Your Daily Saving Must Be", 0, QApplication::UnicodeUTF8));
         calenderButton->setText(QString());
         saveButton->setText(QApplication::translate("BudgieAPPQTClass", "Save", 0, QApplication::UnicodeUTF8));
+        saverBackButton->setText(QApplication::translate("BudgieAPPQTClass", "Back", 0, QApplication::UnicodeUTF8));
+        LoanCalculatorBackButton->setText(QApplication::translate("BudgieAPPQTClass", "Back", 0, QApplication::UnicodeUTF8));
+        loanTypeCar->setText(QApplication::translate("BudgieAPPQTClass", "Car", 0, QApplication::UnicodeUTF8));
+        calculateLoanButton->setText(QApplication::translate("BudgieAPPQTClass", "Calculate Loan", 0, QApplication::UnicodeUTF8));
+        loanTypeLabel->setText(QApplication::translate("BudgieAPPQTClass", "Loan Type", 0, QApplication::UnicodeUTF8));
+        monthlyLoanAmountLabel->setText(QApplication::translate("BudgieAPPQTClass", "Monthly Loan Amount", 0, QApplication::UnicodeUTF8));
+        loanTypeHouse->setText(QApplication::translate("BudgieAPPQTClass", "House", 0, QApplication::UnicodeUTF8));
+        interestRateLabel->setText(QApplication::translate("BudgieAPPQTClass", "Interest Rate", 0, QApplication::UnicodeUTF8));
+        loanDurationLabel->setText(QApplication::translate("BudgieAPPQTClass", "duratioin", 0, QApplication::UnicodeUTF8));
+        loanAmountLabel->setText(QApplication::translate("BudgieAPPQTClass", "Loan Amount", 0, QApplication::UnicodeUTF8));
         heading->setText(QApplication::translate("BudgieAPPQTClass", "Budgie App", 0, QApplication::UnicodeUTF8));
         subHeading->setText(QApplication::translate("BudgieAPPQTClass", "Finance Made Simple", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
