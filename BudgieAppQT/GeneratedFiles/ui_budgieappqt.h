@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'budgieappqt.ui'
 **
-** Created: Fri Apr 21 01:01:13 2017
+** Created: Wed Apr 26 02:13:48 2017
 **      by: Qt User Interface Compiler version 4.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -15,6 +15,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCalendarWidget>
+#include <QtGui/QComboBox>
 #include <QtGui/QDateEdit>
 #include <QtGui/QDoubleSpinBox>
 #include <QtGui/QHeaderView>
@@ -41,6 +42,10 @@ public:
     QLabel *emailLabel;
     QLineEdit *emailValue;
     QPushButton *launchButton;
+    QComboBox *emailComboBox;
+    QLabel *selectEmailLabel;
+    QPushButton *deleteButton;
+    QPushButton *viewButton;
     QWidget *inputPage;
     QLabel *incomeLabel;
     QLabel *livingExpenseLabel;
@@ -126,15 +131,33 @@ public:
         homePage->setObjectName(QString::fromUtf8("homePage"));
         emailLabel = new QLabel(homePage);
         emailLabel->setObjectName(QString::fromUtf8("emailLabel"));
-        emailLabel->setGeometry(QRect(60, 60, 150, 20));
+        emailLabel->setGeometry(QRect(60, 170, 150, 20));
         emailLabel->setLayoutDirection(Qt::LeftToRight);
         emailLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         emailValue = new QLineEdit(homePage);
         emailValue->setObjectName(QString::fromUtf8("emailValue"));
-        emailValue->setGeometry(QRect(220, 60, 200, 20));
+        emailValue->setEnabled(true);
+        emailValue->setGeometry(QRect(220, 170, 200, 20));
         launchButton = new QPushButton(homePage);
         launchButton->setObjectName(QString::fromUtf8("launchButton"));
+        launchButton->setEnabled(true);
         launchButton->setGeometry(QRect(275, 320, 50, 30));
+        emailComboBox = new QComboBox(homePage);
+        emailComboBox->setObjectName(QString::fromUtf8("emailComboBox"));
+        emailComboBox->setGeometry(QRect(220, 70, 200, 20));
+        selectEmailLabel = new QLabel(homePage);
+        selectEmailLabel->setObjectName(QString::fromUtf8("selectEmailLabel"));
+        selectEmailLabel->setGeometry(QRect(60, 70, 150, 20));
+        selectEmailLabel->setLayoutDirection(Qt::LeftToRight);
+        selectEmailLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        deleteButton = new QPushButton(homePage);
+        deleteButton->setObjectName(QString::fromUtf8("deleteButton"));
+        deleteButton->setEnabled(false);
+        deleteButton->setGeometry(QRect(370, 110, 50, 30));
+        viewButton = new QPushButton(homePage);
+        viewButton->setObjectName(QString::fromUtf8("viewButton"));
+        viewButton->setEnabled(false);
+        viewButton->setGeometry(QRect(220, 110, 50, 30));
         stackedWidget->addWidget(homePage);
         inputPage = new QWidget();
         inputPage->setObjectName(QString::fromUtf8("inputPage"));
@@ -434,6 +457,9 @@ public:
         QObject::connect(loanTypeHouse, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleHouseRadioButton()));
         QObject::connect(loanTypeCar, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleCarRadioButton()));
         QObject::connect(calculateLoanButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleCalculateLoanButton()));
+        QObject::connect(viewButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleViewButton()));
+        QObject::connect(deleteButton, SIGNAL(released()), BudgieAPPQTClass, SLOT(handleDeleteButton()));
+        QObject::connect(emailComboBox, SIGNAL(currentIndexChanged(int)), BudgieAPPQTClass, SLOT(handleEmailComboBox()));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -446,6 +472,13 @@ public:
         BudgieAPPQTClass->setWindowTitle(QApplication::translate("BudgieAPPQTClass", "BudgieAPPQT", 0, QApplication::UnicodeUTF8));
         emailLabel->setText(QApplication::translate("BudgieAPPQTClass", "Enter Your Email", 0, QApplication::UnicodeUTF8));
         launchButton->setText(QApplication::translate("BudgieAPPQTClass", "Launch", 0, QApplication::UnicodeUTF8));
+        emailComboBox->clear();
+        emailComboBox->insertItems(0, QStringList()
+         << QApplication::translate("BudgieAPPQTClass", "--Add New--", 0, QApplication::UnicodeUTF8)
+        );
+        selectEmailLabel->setText(QApplication::translate("BudgieAPPQTClass", "Select Your Email", 0, QApplication::UnicodeUTF8));
+        deleteButton->setText(QApplication::translate("BudgieAPPQTClass", "Delete", 0, QApplication::UnicodeUTF8));
+        viewButton->setText(QApplication::translate("BudgieAPPQTClass", "View", 0, QApplication::UnicodeUTF8));
         incomeLabel->setText(QApplication::translate("BudgieAPPQTClass", "Enter Monthly Income", 0, QApplication::UnicodeUTF8));
         livingExpenseLabel->setText(QApplication::translate("BudgieAPPQTClass", "Enter Monthly Living Expense", 0, QApplication::UnicodeUTF8));
         billsExpenseLabel->setText(QApplication::translate("BudgieAPPQTClass", "Enter Monthly Bills Expense", 0, QApplication::UnicodeUTF8));

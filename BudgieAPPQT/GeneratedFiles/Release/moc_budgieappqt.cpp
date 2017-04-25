@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'budgieappqt.h'
 **
-** Created: Fri Apr 21 01:01:13 2017
+** Created: Wed Apr 26 02:13:48 2017
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_BudgieAPPQT[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      21,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -49,6 +49,9 @@ static const uint qt_meta_data_BudgieAPPQT[] = {
      348,   12,   12,   12, 0x08,
      373,   12,   12,   12, 0x08,
      396,   12,   12,   12, 0x08,
+     424,   12,   12,   12, 0x08,
+     443,   12,   12,   12, 0x08,
+     464,   12,   12,   12, 0x08,
 
        0        // eod
 };
@@ -66,6 +69,8 @@ static const char qt_meta_stringdata_BudgieAPPQT[] = {
     "handleHouseRadioButton()\0"
     "handleCarRadioButton()\0"
     "handleCalculateLoanButton()\0"
+    "handleViewButton()\0handleDeleteButton()\0"
+    "handleEmailComboBox()\0"
 };
 
 const QMetaObject BudgieAPPQT::staticMetaObject = {
@@ -115,9 +120,12 @@ int BudgieAPPQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 15: handleHouseRadioButton(); break;
         case 16: handleCarRadioButton(); break;
         case 17: handleCalculateLoanButton(); break;
+        case 18: handleViewButton(); break;
+        case 19: handleDeleteButton(); break;
+        case 20: handleEmailComboBox(); break;
         default: ;
         }
-        _id -= 18;
+        _id -= 21;
     }
     return _id;
 }
